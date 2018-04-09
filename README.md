@@ -62,3 +62,11 @@ token.balanceOf(account0)
 token.balanceOf(account1)
 
 > BigNumber { s: 1, e: 2, c: [ 200 ] }
+```
+
+## TODO
+
+1. Testing using Jest
+2. Deploying onto TestNet
+- ABI
+- Parity
