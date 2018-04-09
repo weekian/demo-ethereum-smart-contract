@@ -1,46 +1,74 @@
 # Solidity Simple Token
+
 Demo Smart Contract using Solidity, Truffle Framework
 
 ## Setting up testing development environment using testrpc
-```
+
+```javascript
+
 ganache-cli
 ```
+
 Runs a test network. Note the port that it is listening to and ensure it is the same as the port
 specified in truffle.js under the development variable
 
 ## Deploying to test development environment using truffle framework
-```
+
+```javascript
+
 truffle compile
 ```
+
 To compile the necesssary files and outputs them to the build directory
-```
+
+```javascript
+
 truffle migrate --network development
 ```
+
 Deploys the contract onto the test environment previously setup
-```
+
+```javascript
+
 truffle console
+
 ```
+
 Opens up the console for interacting with the contract
-```
+
+```javascript
+
 account0 = web3.eth.accounts[0]
 account1 = web3.eth.accounts[1]
+
 ```
+
 Assigns the first 2 accounts to the account0 and account1 variables
-```
+
+```javascript
+
 MySimpleToken.deployed().then(inst => {token = inst})
+
 ```
+
 Assigns a reference to the contract that truffle deployed to the network
-```
+
+```javascript
+
 token.balanceOf(account0)
 
 > BigNumber { s: 1, e: 3, c: [ 1000 ] }
+
 ```
+
 Displays the balance of the account0. To transfer tokens, run
-```
+
+```javascript
+
 token.sendToken(account1, 200)
 
 > { tx: '0xe07d4e89eb04c689e9af81ff7c30a61444551cf43fe6e0cc19df97d476f6e588',
-  receipt: 
+  receipt:
    { transactionHash: '0xe07d4e89eb04c689e9af81ff7c30a61444551cf43fe6e0cc19df97d476f6e588',
      transactionIndex: 0,
      blockHash: '0x2dfb22298381bc7c93dbc036588b859f357c85cc94771d56db5380a5977741f3',
@@ -52,9 +80,13 @@ token.sendToken(account1, 200)
      status: '0x01',
      logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' },
   logs: [] }
+
 ```
+
 Then run the following command to see the new balances of account0 and account1
-```
+
+```javascript
+
 token.balanceOf(account0)
 
 > BigNumber { s: 1, e: 2, c: [ 800 ] }
