@@ -1,4 +1,4 @@
-# Solidity Simple Token
+# Solidity Simple Contract
 
 Demo Smart Contract using Solidity, Truffle Framework
 
